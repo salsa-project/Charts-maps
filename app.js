@@ -11,7 +11,19 @@ var chart = c3.generate({
     axis: {
         x: {
             show: false
-        }
+        },
+        y: {
+          padding: {
+            top: 10,
+            bottom: 10
+          },
+          tick: {
+            // count: 8,
+            values: [0, 100, 200, 300, 400, 500, 600],
+            format: function (d) { return "$ " + d; },
+            // outer: false
+          }
+        },
     },
     grid: {
         y: {
@@ -23,8 +35,14 @@ var chart = c3.generate({
                 {value: 500, text: ''},
                 {value: 600, text: ''}
             ]
-        }
-    }
+        },
+        lines: {
+        front: false
+      }
+    },
+     legend: {
+       show: false
+       }
 
 });
 

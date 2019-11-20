@@ -47,3 +47,24 @@ h1{
   r: 7px;
   fill: rgb(0, 128, 255);
 }
+#chart .tick line{
+  display: none;
+}
+#chart text {
+   fill: gray;
+}
+#chart .domain{
+  opacity: 0;
+}
+#chart .c3-ygrid-line{
+  opacity: 0.4;
+}
+#chart .c3-xgrid-focus{
+  opacity: 0;
+}
+
+
+
+
+
+/*end*/
