@@ -40,7 +40,7 @@ h2{
 .alert>p{
   padding: 5px 30px;
   color: rgba(79, 183, 27, 1);
-  background: rgba(79, 183, 27, 0.3);
+  background: rgba(79, 183, 27, 0.2);
   border: 1px rgb(79, 183, 27) solid;
 }
 .alert2{
@@ -48,7 +48,7 @@ h2{
 }
 .alert2>p{
   color: rgba(255, 97, 0, 1);
-  background: rgba(255, 97, 0, 0.3);
+  background: rgba(255, 97, 0, 0.2);
   border: 1px rgb(255, 97, 0) solid;
 }
 
