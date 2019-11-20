@@ -1,70 +1,94 @@
 body{
+  width: 100%;
   overflow-x: hidden;
 }
-#logo{
+a{
+  position: relative;
+  top: -100px;
+  float: left;
+}
+a::before{
   position: absolute;
   top: -120px;
-  right: -120px;
-  height: 200px;
-  width: 200px;
-  background: rgba(58, 77, 80, 0.3);
-  transform: rotate(-45deg);
+  left: -110px;
+  content: "";
+  border: 100px red solid;
+  border-color: transparent rgba(58, 77, 80, 0.3) transparent transparent;
+  transform: rotate(45deg);
+  z-index: -1;
   box-shadow: 0px 0px 8px 0px lightgray;
 }
-img{
+a>img{
+  position: absolute;
+  left: 10px;
   height: 50px;
   width: 50px;
-  margin-top: 80px;
-  margin-left: 5px;
-  transform: rotate(45deg);
 }
-h1{
+h2{
   color: lightgray;
   text-align: center;
   font-size: 35pt;
   font-family: monospace, sans-serif;
+  clear: both;
+}
+.alert{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.alert>p{
+  padding: 5px 30px;
+  color: rgba(79, 183, 27, 1);
+  background: rgba(79, 183, 27, 0.3);
+  border: 1px rgb(79, 183, 27) solid;
+}
+.alert2{
+  top: 530px;
+}
+.alert2>p{
+  color: rgba(255, 97, 0, 1);
+  background: rgba(255, 97, 0, 0.3);
+  border: 1px rgb(255, 97, 0) solid;
 }
 
 /******************************/
 /*        CHART PART          */
 /******************************/
 
-#chart{
+/********* CHART 1 ************/
+#chart1{
   width: 95%;
-  margin: 80px auto 0px;
+  margin: 120px auto 0px;
 }
-#chart .c3-line-data1 {
+#chart1 .c3-line-data1 {
   stroke-width: 8px;
   stroke: rgb(0, 128, 255) !important;
 }
-#chart .c3-circle{
+#chart1 .c3-circle{
   stroke-width: 3.5px;
   r: 3.5px;
   fill: rgb(0, 128, 255);
 }
-#chart .c3-circle._expanded_{
+#chart1 .c3-circle._expanded_{
   stroke-width: 5px;
   r: 7px;
   fill: rgb(0, 128, 255);
 }
-#chart .tick line{
+#chart1 .tick line{
   display: none;
 }
-#chart text {
+#chart1 text {
    fill: gray;
 }
-#chart .domain{
+#chart1 .domain{
   opacity: 0;
 }
-#chart .c3-ygrid-line{
+#chart1 .c3-ygrid-line{
   opacity: 0.4;
 }
-#chart .c3-xgrid-focus{
+#chart1 .c3-xgrid-focus{
   opacity: 0;
 }
 
-
-
-
-
-/*end*/
+/********* CHART 2 ************/
