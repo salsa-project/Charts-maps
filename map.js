@@ -21,49 +21,17 @@ var map = new Datamap({
         borderColor: '#FFFFFF',
         popupOnHover: true,
         radius: 3
-    },
-    data: {
-        'ALG': {fillkey: 'ALG'},
-        'RUS': {fillKey: 'RUS'},
-        'PRK': {fillKey: 'PRK'},
-        'PRC': {fillKey: 'PRC'},
-        'IND': {fillKey: 'IND'},
-        'GBR': {fillKey: 'GBR'},
-        'FRA': {fillKey: 'FRA'},
-        'PAK': {fillKey: 'PAK'},
-        'USA': {fillKey: 'USA'}
     }
     });
 
 map.bubbles([
- {name: 'Bubble 1', latitude: 21.32, longitude: -7.32}
+  //هنا تضع عناوين البلدان (خطوط الطول و العرض) لتظهر العلامات الزرقاء على الخريطة
+ {name: 'Bubble 1', latitude: 21.32, longitude: -7.32},
+ {name: 'Bubble 2', latitude: -11.32, longitude: -60.32},
+ {name: 'Bubble 3', latitude: 21.32, longitude: -7.32},
+ {name: 'Bubble 4', latitude: 5.32, longitude: 38.32}
 ], {
  popupTemplate: function(geo, data) {
    return "<div class='hoverinfo'>Bubble for " + data.name + "";
  }
 });
-
-
-
-
-
-
-//   var bombs = [{
-//         name: 'MrSalsa',
-//         radius: 6,
-//         country: 'Algeria',
-//         fillKey: 'ALG',
-//         date: '1953-08-12',
-//         //هنا إحداثيات الدائرة
-//         latitude: 30.07,
-//         longitude: 3
-//       }];
-//
-// map.bubbles(bombs, {
-//     popupTemplate: function (geo, data) {
-//             return ['<div class="hoverinfo">' +  data.name,
-//             '<br/>Country: ' +  data.country + '',
-//             '<br/>Date: ' +  data.date + '',
-//             '</div>'].join('');
-//     }
-// });
