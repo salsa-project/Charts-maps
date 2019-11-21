@@ -1,12 +1,15 @@
 require.config({
   paths: {
-    d3: "https://d3js.org/d3.v5.min",
+    d3: "https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3",
     c3: "https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.min"
   }
 });
 
 // CHART 1
 require(["d3", "c3"], function(d3, c3) {
+  //D3 (v3, v5) working together in the same page
+  d3version5 = d3
+  window.d3 = null
 
   window.chart = c3.generate({
     bindto: '#chart1',

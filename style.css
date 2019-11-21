@@ -151,3 +151,15 @@ h2{
   r: 7px;
   fill: rgb(0, 128, 255);
 }
+
+/********** MAP ************/
+
+#container{
+  position: relative;
+  height: 300px;
+  width: 500px;
+  margin: 120px auto 0px;
+}
+#container .datamaps-bubble{
+  fill: rgb(0, 128, 255) !important;
+}
