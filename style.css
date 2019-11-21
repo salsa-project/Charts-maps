@@ -1,83 +1,31 @@
-body{
-  width: 100%;
-  overflow-x: hidden;
-}
-#logo{
-  position: relative;
-  top: -100px;
-  float: left;
-}
-#logo::before{
-  position: absolute;
-  top: -120px;
-  left: -110px;
-  content: "";
-  border: 100px red solid;
-  border-color: transparent rgba(58, 77, 80, 0.3) transparent transparent;
-  transform: rotate(45deg);
-  z-index: -1;
-  box-shadow: 0px 0px 8px 0px lightgray;
-}
-#logo>img{
-  position: absolute;
-  left: 10px;
-  height: 50px;
-  width: 50px;
-}
-h2{
-  color: lightgray;
-  text-align: center;
-  font-size: 35pt;
-  font-family: monospace, sans-serif;
-  clear: both;
-}
-.alert{
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.alert>p{
-  padding: 5px 30px;
-  color: rgba(255, 97, 0, 1);
-  background: rgba(255, 97, 0, 0.2);
-  border: 1px rgb(255, 97, 0) solid;
-}
-.alert2{
-  top: 500px;
-}
-.alert2>p{
-  color: rgba(79, 183, 27, 1);
-  background: rgba(79, 183, 27, 0.2);
-  border: 1px rgb(79, 183, 27) solid;
-}
-.alert3{
-  top: 950px;
-}
-.alert3>p{
-  color: rgba(79, 183, 27, 1);
-  background: rgba(79, 183, 27, 0.2);
-  border: 1px rgb(79, 183, 27) solid;
-}
-.alert4{
-  top: 1400px;
-}
-.alert4>p{
-color: rgba(79, 183, 27, 1);
-background: rgba(79, 183, 27, 0.2);
-border: 1px rgb(79, 183, 27) solid;
-}
-/******************************/
-/*        CHART PART          */
-/******************************/
+/******************************
+1- chart1
+2- chart2
+3- chart3
+4- map
+*****************************/
 
 /********* CHART 1 ************/
 #chart1-container{
   padding: 20px;
 }
+.chart-options{
+  margin: 0px 0px 40px 10px;
+}
+.chart-option{
+  padding: 7px 20px;
+  color: gray;
+  background: white;
+  border-radius: 15px;
+  font-size: 10pt;
+  text-decoration: none;
+}
+.chart-option-active{
+  color: white;
+  background: rgba(73, 73, 73, 1);
+}
 #chart1{
-  width: 95%;
-  margin: 120px auto 0px;
+  margin: 0px auto;
 }
 #chart1 .c3-line-data1 {
   stroke-width: 8px;
@@ -109,7 +57,7 @@ border: 1px rgb(79, 183, 27) solid;
 /********* CHART 2 ************/
 #chart2{
   width: 95%;
-  margin: 150px auto 0px;
+  margin: 0px auto;
 }
 #chart2 .c3-circle{
   stroke-width: 4px;
@@ -132,7 +80,7 @@ border: 1px rgb(79, 183, 27) solid;
 /********* CHART 3 ************/
 #chart3{
   width: 95%;
-  margin: 150px auto 0px;
+  margin: 0px auto;
 }
 #chart3 .c3-circle{
   stroke-width: 3.5px;
@@ -156,12 +104,11 @@ border: 1px rgb(79, 183, 27) solid;
 }
 
 /********** MAP ************/
-
 #container{
   position: relative;
   height: 300px;
   width: 500px;
-  margin: 120px auto 0px;
+  margin: 0px auto;
 }
 #container .datamaps-bubble{
   fill: rgb(0, 128, 255) !important;

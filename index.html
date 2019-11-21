@@ -11,29 +11,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <a id="logo" href="index.html"><img src="resources/images/logo.png" alt="LOGO"></a>
-    <div class="alert alert1">
-      <p>Chart 01: InProgress</p>
-    </div>
-    <div class="alert alert2">
-      <p>Chart 02: DONE</p>
-    </div>
-    <div class="alert alert3">
-      <p>Chart 03: DONE</p>
-    </div>
-    <div class="alert alert4">
-      <p>Map: DONE</p>
-    </div>
 
     <!-- ................................. -->
     <!--               CHARTS              -->
     <!-- ................................. -->
 
     <div id="chart1-container">
-      <a href="#">All time</a>
-      <a href="#">This year</a>
-      <a href="#">This week</a>
-      <a href="#">Today</a>
+      <div class="chart-options">
+        <a class="chart-option chart-option-active" href="#">All time</a>
+        <a class="chart-option" href="#">This year</a>
+        <a class="chart-option" href="#">This week</a>
+        <a class="chart-option" href="#">Today</a>
+      </div>
       <div id="chart1"></div>
     </div>
 
@@ -47,6 +36,7 @@
 
 
     <div id="container"></div>
+
     <!-- map scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
