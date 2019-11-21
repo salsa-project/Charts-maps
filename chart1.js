@@ -66,6 +66,7 @@ require(["d3", "c3"], function(d3, c3) {
 var chart = c3.generate({
   bindto: '#chart2',
   data: {
+    //هنا ضع الإحصائيات ديناميكيا لكي يتشكل المنحنى
     columns: [
       ['data1', 400, 500, 550, 450, 430, 550, 650, 700, 650],
     ],
@@ -83,9 +84,8 @@ var chart = c3.generate({
   },
   grid: {
     x: {
-      //الخطوط الرمادية الأفقية .. لا تنسى إدخالها ديناميكيا عند كل 100
+      //الخطوط الرمادية الأفقية .. لا تنسى إدخالها ديناميكيا عند كل 1
       lines: [
-        {value: 100,text: ''},
         {value: 1, text: ''},
         {value: 2, text: ''},
         {value: 3, text: ''},
@@ -109,12 +109,13 @@ var chart = c3.generate({
 });
 
 
-// CHART 03
-// CHART 2
+
+// CHART 3
 require(["d3", "c3"], function(d3, c3) {
 var chart = c3.generate({
   bindto: '#chart3',
   data: {
+    //هنا ضع الإحصائيات ديناميكيا لكي يتشكل المنحنى
     columns: [
       ['data1', 300, 400, 430, 410, 410, 430, 500, 600, 650, 650],
     ],
@@ -132,9 +133,8 @@ var chart = c3.generate({
   },
   grid: {
     x: {
-      //الخطوط الرمادية الأفقية .. لا تنسى إدخالها ديناميكيا عند كل 100
+      //الخطوط الرمادية الأفقية .. لا تنسى إدخالها ديناميكيا عند كل 1
       lines: [
-        {value: 100,text: ''},
         {value: 1, text: ''},
         {value: 2, text: ''},
         {value: 3, text: ''},
