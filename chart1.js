@@ -1,7 +1,9 @@
 require.config({
-    baseUrl: './c3/js',
     paths: {
-        d3: "https://d3js.org/d3.v5.min"
+        d3: "https://d3js.org/d3.v5.min",
+        c3: "https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.min"
+        // c3: "https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3"
+
     }
 });
 
