@@ -107,3 +107,53 @@ var chart = c3.generate({
   }
 });
 });
+
+
+// CHART 03
+// CHART 2
+require(["d3", "c3"], function(d3, c3) {
+var chart = c3.generate({
+  bindto: '#chart3',
+  data: {
+    columns: [
+      ['data1', 300, 400, 430, 410, 410, 430, 500, 600, 650, 650],
+    ],
+    types: {
+      data1: 'area-spline',
+    }
+  },
+  axis:{
+    x:{
+      show: false
+    },
+    y:{
+      show: false
+    }
+  },
+  grid: {
+    x: {
+      //الخطوط الرمادية الأفقية .. لا تنسى إدخالها ديناميكيا عند كل 100
+      lines: [
+        {value: 100,text: ''},
+        {value: 1, text: ''},
+        {value: 2, text: ''},
+        {value: 3, text: ''},
+        {value: 4, text: ''},
+        {value: 5, text: ''},
+        {value: 6, text: ''},
+        {value: 7, text: ''},
+        {value: 8, text: ''}
+      ]
+    },
+    lines: {
+      front: false
+    },
+    focus: {
+        show: false
+    }
+  },
+  legend: {
+    show: false
+  }
+});
+});

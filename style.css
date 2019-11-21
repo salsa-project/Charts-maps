@@ -52,12 +52,15 @@ h2{
   border: 1px rgb(79, 183, 27) solid;
 }
 .alert3{
-  top: 1000px;
+  top: 950px;
 }
 .alert3>p{
-  color: rgba(255, 97, 0, 1);
+  /* color: rgba(255, 97, 0, 1);
   background: rgba(255, 97, 0, 0.2);
-  border: 1px rgb(255, 97, 0) solid;
+  border: 1px rgb(255, 97, 0) solid; */
+  color: rgba(79, 183, 27, 1);
+  background: rgba(79, 183, 27, 0.2);
+  border: 1px rgb(79, 183, 27) solid;
 }
 
 /******************************/
@@ -99,7 +102,7 @@ h2{
 /********* CHART 2 ************/
 #chart2{
   width: 95%;
-  margin: 120px auto 0px;
+  margin: 150px auto 0px;
 }
 #chart2 .c3-circle{
   stroke-width: 4px;
@@ -116,4 +119,31 @@ h2{
 }
 #chart2 .c3-xgrid-line{
   opacity: 0.2;
+}
+
+
+/********* CHART 3 ************/
+#chart3{
+  width: 95%;
+  margin: 150px auto 0px;
+}
+#chart3 .c3-circle{
+  stroke-width: 3.5px;
+  r: 3.5px;
+  fill: rgb(0, 128, 255);
+}
+#chart3 .c3-line-data1 {
+  stroke-width: 8px;
+  stroke: rgb(0, 128, 255) !important;
+}
+#chart3 .c3-areas-data1 path{
+  fill: rgba(0, 128, 255, 0.4) !important;
+}
+#chart3 .c3-xgrid-line{
+  opacity: 0.2;
+}
+#chart3 .c3-circle._expanded_{
+  stroke-width: 5px;
+  r: 7px;
+  fill: rgb(0, 128, 255);
 }
