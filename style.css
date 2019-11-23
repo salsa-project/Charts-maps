@@ -87,6 +87,11 @@
   r: 3.5px;
   fill: rgb(0, 128, 255);
 }
+#chart3 .c3-circle._expanded_{
+  stroke-width: 5px;
+  r: 7px;
+  fill: rgb(0, 128, 255);
+}
 #chart3 .c3-line-data1 {
   stroke-width: 8px;
   stroke: rgb(0, 128, 255) !important;
@@ -96,11 +101,6 @@
 }
 #chart3 .c3-xgrid-line{
   opacity: 0.2;
-}
-#chart3 .c3-circle._expanded_{
-  stroke-width: 5px;
-  r: 7px;
-  fill: rgb(0, 128, 255);
 }
 
 /********** MAP ************/
