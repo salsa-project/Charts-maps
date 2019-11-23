@@ -102,7 +102,15 @@
 #chart3 .c3-xgrid-line{
   opacity: 0.2;
 }
-
+.c3-tooltip th{
+  padding: 5px 10px;
+  color: rgb(0, 87, 199);
+  background: rgba(0, 128, 255, 0.4);
+}
+.c3-tooltip td{
+  padding: 5px 0px;
+  text-align: center !important;
+}
 /********** MAP ************/
 #container{
   position: relative;

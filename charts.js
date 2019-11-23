@@ -5,7 +5,9 @@ require.config({
   }
 });
 
-// CHART 1
+/***********************************/
+/*               CHART1            */
+/***********************************/
 require(["d3", "c3"], function(d3, c3) {
   //D3 (v3, v5) working together in the same page
   d3version5 = d3
@@ -14,24 +16,31 @@ require(["d3", "c3"], function(d3, c3) {
   window.chart = c3.generate({
     bindto: '#chart1',
     data: {
+      x: 'times',
+      xFormat: '%Y-%m-%d %H:%M:%S',
       columns: [
+        //هنا ضع إحصائيات الوقت ديناميكيا
+        ['times','2015-09-15 18:20:34','2015-09-16 18:25:42','2015-09-17 18:30:48', '2015-09-18 18:30:48', '2015-09-19 18:30:48', '2015-09-20 18:30:48'],
         //هنا ضع إحصائيات الأرباح ديناميكيا لكي يتشكل المنحنى
-        ['data1', 450, 100, 500, 300, 600, 400]
+        ['data1', 450, 100, 500, 300, 600, 400, 200]
       ],
       type: 'spline'
     },
     axis: {
       x: {
-        show: false
+        show: false,
+        type: 'timeseries',
+        localtime: false,
+        tick: {
+          format: '%Y-%m-%d %H:%M:%S'
+        }
       },
       y: {
         padding: {
-          top: 10,
-          bottom: 10
+          top: 20,
+          bottom: 20
         },
         tick: {
-          //هذه هي الأرقام الظاهرة عل البيان حاليا بالدولار
-          values: [0, 100, 200, 300, 400, 500, 600],
           format: function(d) {
             return "$ " + d;
           }
@@ -41,7 +50,8 @@ require(["d3", "c3"], function(d3, c3) {
     grid: {
       y: {
         //الخطوط الرمادية الأفقية .. لا تنسى إدخالها ديناميكيا عند كل 100
-        lines: [{value: 100,text: ''},
+        lines: [
+          {value: 100,text: ''},
           {value: 200, text: ''},
           {value: 300, text: ''},
           {value: 400, text: ''},
@@ -60,17 +70,91 @@ require(["d3", "c3"], function(d3, c3) {
       show: false
     }
   });
-
 });
 
+const times = document.getElementsByClassName("chart-option");
+const allTime = document.getElementsByClassName("chart-option")[0];
+const thisYear = document.getElementsByClassName("chart-option")[1];
+const thisWeek = document.getElementsByClassName("chart-option")[2];
+const today = document.getElementsByClassName("chart-option")[3];
 
-// CHART 2
+allTime.addEventListener('click', function(){
+  //تغيير لون خلفية الزر
+  for(var m = 0 ; m < times.length; ++m){
+    times[m].classList.remove('chart-option-active')
+  }
+  this.classList.toggle('chart-option-active');
+  //تحديث البيان
+  chart.load({
+  columns: [
+    //هنا إحصائيات المن البداية إلى النهاية
+    //هنا تقوم بوضع الإحصائيات الجديدة بعد جلبها من السيرفر (قاعدة البيانات)
+    ['times','2015-09-15 18:20:34','2015-09-16 18:25:42','2015-09-17 18:20:34','2015-09-18 18:25:42','2015-09-19 18:20:34','2015-09-20 18:25:42','2015-09-21 18:20:34','2015-09-22 18:25:42','2015-09-23 18:20:34','2015-09-24 18:25:42','2015-09-25 18:20:34','2015-09-26 18:25:42','2015-09-27 18:20:34','2015-09-28 18:25:42','2015-09-29 18:20:34','2015-09-30 18:25:42'],
+    ['data1', 100, 200, 300, 200, 100, 100, 100, 200, 100, 200, 300, 200, 100, 100, 100, 200]
+  ]
+});
+})
+thisYear.addEventListener('click', function(){
+  //تغيير لون خلفية الزر
+  for(var m = 0 ; m < times.length; ++m){
+    times[m].classList.remove('chart-option-active')
+  }
+  this.classList.toggle('chart-option-active');
+  //تحديث البيان
+  chart.load({
+  columns: [
+    //هنا إحصائيات العام
+    //هنا تقوم بوضع الإحصائيات الجديدة بعد جلبها من السيرفر (قاعدة البيانات)
+    ['times','2015-09-15 18:20:34','2015-09-16 18:25:42','2015-09-17 18:20:34','2015-09-18 18:25:42','2015-09-19 18:20:34','2015-09-20 18:25:42'],
+    ['data1', 150, 300, 100, 50, 500, 700]
+  ]
+});
+})
+thisWeek.addEventListener('click', function(){
+  //تغيير لون خلفية الزر
+  for(var m = 0 ; m < times.length; ++m){
+    times[m].classList.remove('chart-option-active')
+  }
+  this.classList.toggle('chart-option-active');
+  //تحديث البيان
+  chart.load({
+  columns: [
+    //هنا إحصائيات الأسبوع
+    //هنا تقوم بوضع الإحصائيات الجديدة بعد جلبها من السيرفر (قاعدة البيانات)
+    ['times','2015-09-15 18:20:34','2015-09-16 18:25:42','2015-09-17 18:20:34','2015-09-18 18:25:42','2015-09-19 18:20:34','2015-09-20 18:25:42'],
+    ['data1', 450, 100, 500, 300, 600, 400]
+  ]
+});
+})
+today.addEventListener('click', function(){
+  //تغيير لون خلفية الزر
+  for(var m = 0 ; m < times.length; ++m){
+    times[m].classList.remove('chart-option-active')
+  }
+  this.classList.toggle('chart-option-active');
+  //تحديث البيان
+  chart.load({
+  columns: [
+    //هنا إحصائيات اليوم
+    //هنا تقوم بوضع الإحصائيات الجديدة بعد جلبها من السيرفر (قاعدة البيانات)
+    ['data1', 100, 200, 300, 200, 100, 100]
+  ]
+});
+})
+
+
+/***********************************/
+/*               CHART2            */
+/***********************************/
 require(["d3", "c3"], function(d3, c3) {
 var chart = c3.generate({
   bindto: '#chart2',
   data: {
+    x: 'times',
+    xFormat: '%Y-%m-%d %H:%M:%S',
     //هنا ضع الإحصائيات ديناميكيا لكي يتشكل المنحنى
     columns: [
+      ['times','2015-09-15 18:20:34','2015-09-16 18:25:42','2015-09-17 18:20:34','2015-09-18 18:25:42','2015-09-19 18:20:34','2015-09-20 18:25:42','2015-09-21 18:20:34','2015-09-22 18:25:42','2015-09-23 18:20:34'],
       ['data1', 400, 500, 550, 450, 430, 550, 650, 700, 650],
     ],
     types: {
@@ -78,9 +162,14 @@ var chart = c3.generate({
     }
   },
   axis:{
-    x:{
-      show: false
-    },
+    x: {
+      show: false,
+      type: 'timeseries',
+      localtime: false,
+      tick: {
+        format: '%Y-%m-%d %H:%M:%S'
+      }
+      },
     y:{
       show: false
     }
@@ -113,13 +202,18 @@ var chart = c3.generate({
 
 
 
-// CHART 3
+/***********************************/
+/*               CHART3            */
+/***********************************/
 require(["d3", "c3"], function(d3, c3) {
 var chart = c3.generate({
   bindto: '#chart3',
   data: {
+    x: 'times',
+    xFormat: '%Y-%m-%d %H:%M:%S',
     //هنا ضع الإحصائيات ديناميكيا لكي يتشكل المنحنى
     columns: [
+      ['times','2015-09-15 18:20:34','2015-09-16 18:25:42','2015-09-17 18:20:34','2015-09-18 18:25:42','2015-09-19 18:20:34','2015-09-20 18:25:42','2015-09-21 18:20:34','2015-09-22 18:25:42','2015-09-23 18:20:34'],
       ['data1', 300, 400, 430, 410, 410, 430, 500, 600, 650, 650],
     ],
     types: {
@@ -127,9 +221,14 @@ var chart = c3.generate({
     }
   },
   axis:{
-    x:{
-      show: false
-    },
+    x: {
+      show: false,
+      type: 'timeseries',
+      localtime: false,
+      tick: {
+        format: '%Y-%m-%d %H:%M:%S'
+      }
+      },
     y:{
       show: false
     }
