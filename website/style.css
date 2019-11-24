@@ -1,0 +1,64 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html, body{
+  height: 100%;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
+}
+.navbar, .right-part{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0px 40px;
+  background: rgba(0, 128, 255, 1);
+}
+#logo{
+  color: white;
+  font-size: 20pt;
+  font-weight: 900;
+}
+.right-part{
+  width: 250px;
+  padding: 0px;
+  background: rgba(0, 128, 255, 0);
+}
+.settings-icon{
+  width: 20px;
+}
+.notifications-icon{
+  width: 15px;
+  margin: 0px 10px;
+}
+.right-part-user{
+  display: flex;
+  align-items: center;
+}
+.right-part-user-picture{
+  height: 40px;
+  width: 40px;
+  margin: 0px 5px;
+  border-radius: 50%;
+}
+.right-part-user-name{
+  color: white;
+  font-size: 9pt;
+}
+
+
+.body-container{
+  height: 100%;
+  width: 100%;
+}
+.left-side-bar{
+  height: 100%;
+  width: 300px;
+  padding: 60px 0px 0px;
+  border: 1px lightgray solid;
+}
