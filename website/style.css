@@ -58,7 +58,8 @@ html, body{
 }
 .left-side-bar{
   height: 100%;
-  width: 300px;
+  width: 200px;
   padding: 60px 0px 0px;
-  border: 1px lightgray solid;
+  border: 1px rgba(20, 20, 20, 0.1) solid;
+  box-shadow: 0px 0px 20px -2px lightgray;
 }
