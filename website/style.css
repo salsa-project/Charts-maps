@@ -53,13 +53,68 @@ html, body{
 
 
 .body-container{
+  display: flex;
   height: 100%;
   width: 100%;
 }
 .left-side-bar{
   height: 100%;
-  width: 200px;
+  width: 250px;
   padding: 60px 0px 0px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
   box-shadow: 0px 0px 20px -2px lightgray;
+}
+
+
+.body-parts{
+  height: 100%;
+  width: 100%;
+  padding: 70px 20px 0px;
+}
+.body-main-conatiner{
+  display: flex;
+}
+.upload-part, .stats-part{
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  width: 70%;
+  margin: 5px 0px;
+  /* border: 1px rgba(20, 20, 20, 0.1) solid; */
+}
+
+.upload-part-body{
+  height: 400%;
+  width: 100%;
+  margin: 0px 0px 30px;
+  border: 1px rgba(20, 20, 20, 0.1) solid;
+}
+.stats-part-statistics-visitors-container{
+  display: flex;
+  justify-content: space-between;
+}
+.stats-part-statistics{
+  height: 150px;
+  width: 63%;
+  border: 1px rgba(20, 20, 20, 0.1) solid;
+}
+.stats-part-visitors{
+  height: 150px;
+  width: 35%;
+  border: 1px rgba(20, 20, 20, 0.1) solid;
+  /* float: right; */
+}
+
+ .stats-part{
+   width: 35%;
+ }
+.upload-part-aside{
+  height: 100%;
+  width: 30%;
+  border: 1px rgba(20, 20, 20, 0.1) solid;
+}
+.stats-part-court{
+  height: 100%;
+  width: 30%;
+  border: 1px rgba(20, 20, 20, 0.1) solid;
 }
