@@ -61,6 +61,7 @@ html, body{
   height: 100%;
   width: 250px;
   padding: 60px 0px 0px;
+  border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
   box-shadow: 0px 0px 20px -2px lightgray;
 }
@@ -68,7 +69,7 @@ html, body{
 
 .body-parts{
   height: 100%;
-  width: 100%;
+  width: 90%;
   padding: 70px 20px 0px;
 }
 .body-main-conatiner{
@@ -77,17 +78,18 @@ html, body{
 .upload-part, .stats-part{
   display: flex;
   flex-direction: column;
-  height: 450px;
+  height: auto;
   width: 70%;
   margin: 5px 0px;
-  /* border: 1px rgba(20, 20, 20, 0.1) solid; */
 }
 
 .upload-part-body{
-  height: 400%;
+  height: 300px;
   width: 100%;
   margin: 0px 0px 30px;
+  border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
+  box-shadow: 0px 0px 20px -9px lightgray;
 }
 .stats-part-statistics-visitors-container{
   display: flex;
@@ -96,25 +98,37 @@ html, body{
 .stats-part-statistics{
   height: 150px;
   width: 63%;
+  border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
+  box-shadow: 0px 0px 20px -9px lightgray;
 }
 .stats-part-visitors{
   height: 150px;
   width: 35%;
+  border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
-  /* float: right; */
+  box-shadow: 0px 0px 20px -9px lightgray;
 }
 
  .stats-part{
-   width: 35%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 30%;
  }
 .upload-part-aside{
-  height: 100%;
-  width: 30%;
+  height: 300px;
+  width: 80%;
+  margin: 0px 0px 30px;
+  border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
+  box-shadow: 0px 0px 20px -9px lightgray;
 }
 .stats-part-court{
-  height: 100%;
-  width: 30%;
+  height: 150px;
+  width: 80%;
+  border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
+  box-shadow: 0px 0px 20px -9px lightgray;
 }
