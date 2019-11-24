@@ -68,7 +68,28 @@ require(["d3", "c3"], function(d3, c3) {
     },
     legend: {
       show: false
-    }
+    },
+    tooltip: {
+      //هذا صندوق المعلومات الذي يظهر عند تمرير الماوس على الشارت
+      contents: function (d, defaultTitleFormat, defaultValueFormat, color) {
+          var $$ = this, config = $$.config,
+              titleFormat = config.tooltip_format_title || defaultTitleFormat,
+              nameFormat = config.tooltip_format_name || function (name) { return name; },
+              valueFormat = config.tooltip_format_value || defaultValueFormat,
+              text, i, title, value, name, bgcolor;
+          for (i = 0; i < d.length; i++) {
+              if (! (d[i] && (d[i].value || d[i].value === 0))) { continue; }
+
+              if (! text) {
+                  title = titleFormat ? titleFormat(d[i].x) : d[i].x;
+                  text = "<div class='tooltip-container " + $$.CLASS.tooltip + "'>" + (title || title === 0 ? "<p class='tooltip-text tooltip-date'>" + title + "</p>" : "");
+              }
+              value = valueFormat(d[i].value, d[i].ratio, d[i].id, d[i].index);
+              text += "<p class='tooltip-text tooltip-value'>" + value + "</p>";
+          }
+          return text + "</div>";
+      }
+  }
   });
 });
 
@@ -196,7 +217,28 @@ var chart = c3.generate({
   },
   legend: {
     show: false
-  }
+  },
+  tooltip: {
+    //هذا صندوق المعلومات الذي يظهر عند تمرير الماوس على الشارت
+    contents: function (d, defaultTitleFormat, defaultValueFormat, color) {
+        var $$ = this, config = $$.config,
+            titleFormat = config.tooltip_format_title || defaultTitleFormat,
+            nameFormat = config.tooltip_format_name || function (name) { return name; },
+            valueFormat = config.tooltip_format_value || defaultValueFormat,
+            text, i, title, value, name, bgcolor;
+        for (i = 0; i < d.length; i++) {
+            if (! (d[i] && (d[i].value || d[i].value === 0))) { continue; }
+
+            if (! text) {
+                title = titleFormat ? titleFormat(d[i].x) : d[i].x;
+                text = "<div class='tooltip-container " + $$.CLASS.tooltip + "'>" + (title || title === 0 ? "<p class='tooltip-text tooltip-date'>" + title + "</p>" : "");
+            }
+            value = valueFormat(d[i].value, d[i].ratio, d[i].id, d[i].index);
+            text += "<p class='tooltip-text tooltip-value'>" + value + "</p>";
+        }
+        return text + "</div>";
+    }
+}
 });
 });
 
@@ -256,6 +298,27 @@ var chart = c3.generate({
   },
   legend: {
     show: false
-  }
+  },
+  tooltip: {
+    //هذا صندوق المعلومات الذي يظهر عند تمرير الماوس على الشارت
+    contents: function (d, defaultTitleFormat, defaultValueFormat, color) {
+        var $$ = this, config = $$.config,
+            titleFormat = config.tooltip_format_title || defaultTitleFormat,
+            nameFormat = config.tooltip_format_name || function (name) { return name; },
+            valueFormat = config.tooltip_format_value || defaultValueFormat,
+            text, i, title, value, name, bgcolor;
+        for (i = 0; i < d.length; i++) {
+            if (! (d[i] && (d[i].value || d[i].value === 0))) { continue; }
+
+            if (! text) {
+                title = titleFormat ? titleFormat(d[i].x) : d[i].x;
+                text = "<div class='tooltip-container " + $$.CLASS.tooltip + "'>" + (title || title === 0 ? "<p class='tooltip-text tooltip-date'>" + title + "</p>" : "");
+            }
+            value = valueFormat(d[i].value, d[i].ratio, d[i].id, d[i].index);
+            text += "<p class='tooltip-text tooltip-value'>" + value + "</p>";
+        }
+        return text + "</div>";
+    }
+}
 });
 });
