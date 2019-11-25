@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 5" width="9" height="5">
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="M-1122 -229L244 -229L244 539L-1122 539Z" />
+		</clipPath>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ff0000 } 
+	</style>
+	<g id="Home – 1" clip-path="url(#cp1)">
+		<g id="Group 207">
+			<g id="arrowhead-pointing-to-the-right">
+				<path id="Path 77" class="shp0" d="M4.52 4.77L8.01 1.27C8.11 1.18 8.16 1.06 8.16 0.92C8.16 0.79 8.11 0.67 8.01 0.57C7.91 0.47 7.8 0.42 7.66 0.42L0.67 0.42C0.53 0.42 0.42 0.47 0.32 0.57C0.22 0.67 0.17 0.79 0.17 0.92C0.17 1.06 0.22 1.18 0.32 1.27L3.82 4.77C3.91 4.87 4.03 4.92 4.17 4.92C4.3 4.92 4.42 4.87 4.52 4.77Z" />
+			</g>
+		</g>
+	</g>
+</svg>

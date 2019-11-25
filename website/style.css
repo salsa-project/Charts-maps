@@ -3,6 +3,7 @@
   margin: 0px;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  color: rgba(0, 0, 0, 0.7);
 }
 html, body{
   height: 100%;
@@ -57,14 +58,69 @@ html, body{
   height: 100%;
   width: 100%;
 }
+
+/************ Left Aside ***********/
 .left-side-bar{
   height: 100%;
   width: 250px;
-  padding: 60px 0px 0px;
+  padding: 80px 0px 0px;
   border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
   box-shadow: 0px 0px 20px -2px lightgray;
+  text-align: center;
 }
+.l-aside-upload-btn{
+  padding: 10px 30px;
+  color: gray;
+  border-radius: 50px;
+  border: 1px rgba(20, 20, 20, 0.1) solid;
+  box-shadow: 0px 3px 8px -2px lightgray;
+  font-size: 10pt;
+  text-decoration: none;
+}
+.l-aside-upload-svg{
+  transform: translateX(-6px) translateY(5px);
+}
+.l-aside-upload-svg path{
+  stroke-width: 0.3px;
+  stroke: gray;
+  fill: gray;
+}
+.l-aside-list{
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 0px;
+}
+.l-aside-item{
+  padding: 10px 0px 10px 50px;
+  margin: 5px 0px;
+  color: gray;
+  border-left: 4px transparent solid;
+  text-align: left;
+  text-decoration: none;
+  font-size: 10pt;
+}
+.l-aside-item-active{
+  color: rgba(0, 128, 255, 1);
+  background: rgba(0, 151, 252, 0.2);
+  border-left: 4px rgba(0, 128, 255, 1) solid;
+}
+.l-aside-item-svg{
+  margin: 0px 5px 0px -20px;
+  transform: translateX(-6px) translateY(4px) scale(1.3);
+}
+.l-aside-item-svg path{
+  stroke-width: 0.5px;
+  stroke: gray;
+  fill: gray;
+  transform: translateX(1.5px) translateY(1px) scale(0.8);
+}
+.l-aside-item-svg-active path{
+  stroke-width: 0.5px;
+  stroke: rgba(0, 128, 255, 1);
+  fill: rgba(0, 128, 255, 1);
+}
+
 
 
 .body-parts{
@@ -82,15 +138,63 @@ html, body{
   width: 70%;
   margin: 5px 0px;
 }
-
+/************ Upload Body ***********/
 .upload-part-body{
+  display: flex;
+  flex-direction: column;
   height: 300px;
   width: 100%;
+  padding: 15px 30px;
   margin: 0px 0px 30px;
   border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
   box-shadow: 0px 0px 20px -9px lightgray;
 }
+.upload-part-body-title{
+  font-size: 10pt;
+  font-weight: 900;
+}
+.upload-part-body-title-svg{
+  fill: rgb(0, 185, 252);
+  transform: translateX(-6px) translateY(4px);
+}
+.upload-part-body-title-svg path{
+  transform: translateY(-1px);
+}
+.upload-part-body-svg-image{
+  height: 100px;
+  width: 100px;
+  margin: 20px auto 15px;
+  transform: scale(1.6);
+  fill: rgb(0, 185, 252);
+}
+.upload-part-body-svg-image path{
+  transform: scale(0.95);
+}
+.upload-part-body-text{
+  text-align: center;
+  font-size: 10pt;
+  font-weight: 600;
+}
+.upload-part-body-btn{
+  width: 220px;
+  padding: 11px 0px;
+  margin: 20px auto 0px;
+  color: white;
+  background: rgba(0, 151, 252, 1);
+  border-radius: 50px;
+  border-width: 0px;
+  box-shadow: 0px 3px 8px -2px lightgray;
+  font-size: 10pt;
+  font-weight: 900;
+}
+.upload-part-body-btn-svg{
+  fill: white;
+  transform: translateX(-6px) translateY(4px);
+}
+
+
+
 .stats-part-statistics-visitors-container{
   display: flex;
   justify-content: space-between;
