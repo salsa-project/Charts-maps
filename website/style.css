@@ -178,7 +178,7 @@ html, body{
 }
 .upload-part-body-btn{
   width: 220px;
-  padding: 11px 0px;
+  padding: 10px 0px;
   margin: 20px auto 0px;
   color: white;
   background: rgba(0, 151, 252, 1);
@@ -199,16 +199,61 @@ html, body{
   display: flex;
   justify-content: space-between;
 }
+/************ statistics ***********/
 .stats-part-statistics{
-  height: 150px;
-  width: 63%;
+  width: 73%;
   border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
   box-shadow: 0px 0px 20px -9px lightgray;
 }
+.stats-part-statistics-header, .aside-stats-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+.stats-part-statistics-header-text{
+  font-size: 10pt;
+}
+.stats-part-statistics-header-svg{
+  fill: rgb(0, 185, 252);
+}
+.stats-part-statistics-header-svg-two{
+  margin: 5px 0px 0px;
+  fill: rgba(0, 0, 0, 0.3);
+}
+.statistics-details-parts-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+  padding: 10px 0px;
+  margin: 0px auto;
+  border-top: 1px rgba(0, 0, 0, 0.1) solid;
+}
+.statistics-details-part{
+  display: flex;
+  padding: 3px 35px 3px 10px;
+  margin: 15px 0px;
+  background: rgba(0, 185, 252, 0.1);
+  border-radius: 10px;
+}
+.statistics-details-part-svg{
+  fill: #0080FE;
+  margin: 10px 10px 0px 0px;
+}
+.statistics-details-count, .visitors-details-count{
+  width: 60px;
+  font-size: 16pt;
+  font-weight: 900;
+  text-align: center;
+}
+.statistics-details-desc, .visitors-details-desc{
+  color: gray;
+  font-size: 6pt;
+}
 .stats-part-visitors{
   height: 150px;
-  width: 35%;
+  width: 26%;
   border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
   box-shadow: 0px 0px 20px -9px lightgray;
@@ -219,19 +264,72 @@ html, body{
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   width: 30%;
+   width: 35%;
  }
+ .visitors-details-text{
+   margin-bottom: 3px;
+   padding-bottom: 10px;
+   border-bottom: 1px rgba(20, 20, 20, 0.1) solid;
+ }
+ .stats-part-visitors{
+   padding: 10px;
+ }
+.visitors-details-count{
+  text-align: left;
+}
+.visitors-details-desc{
+  font-size: 6pt;
+}
+.stats-part-visitors-users-country{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0px 4px;
+  border-bottom: 1px rgba(20, 20, 20, 0.1) solid;
+}
+.stats-part-visitors-users-country>p{
+  font-size: 8pt;
+  font-weight: 600;
+}
+.stats-part-visitors-users-country p+p{
+  padding: 5px 0px 0px;
+  color: lightgray;
+  font-size: 6pt;
+}
+.stats-part-visitors-view{
+  padding: 5px 0px;
+  color: rgba(0, 145, 252, 1);
+  font-size: 7pt;
+  text-align: center;
+}
+
 .upload-part-aside{
   height: 300px;
-  width: 80%;
+  width: 73%;
   margin: 0px 0px 30px;
   border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
   box-shadow: 0px 0px 20px -9px lightgray;
 }
+.aside-stats-header{
+
+}
+.aside-stats-header>p{
+  padding-left: 5px;
+  font-size: 9pt;
+  font-weight: 600;
+}
+.aside-stats-header p+p{
+  padding: 5px;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 8pt;
+}
+.aside-stats-header-text-svg{
+  margin-right: 5px;
+}
+
 .stats-part-court{
   height: 150px;
-  width: 80%;
+  width: 73%;
   border-radius: 10px;
   border: 1px rgba(20, 20, 20, 0.1) solid;
   box-shadow: 0px 0px 20px -9px lightgray;
