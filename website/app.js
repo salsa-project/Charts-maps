@@ -32,7 +32,7 @@ const videoType1 = document.getElementsByClassName('video-details-list-one')[0];
 const videoType2 = document.getElementsByClassName('video-details-list-two')[0];
 const videoNameDisplay = document.getElementsByClassName('video-name-display')[0];
 const chooseSubtitiesContainer = document.getElementsByClassName('video-details-subtities-container')[0];
-const chooseSubtitiesItems = document.getElementsByClassName('video-details-subtities-item');
+const chooseSubtitiesItems = document.getElementsByClassName('video-details-subtities');
 const fileWraper = document.getElementsByClassName('file-wrapper')[0];
 const fileInput = document.getElementById('video-file');
 
@@ -68,6 +68,7 @@ function getFileData(myFile){
 // حذف إسم الفيديو و تفريغ المدخلات
 //إخفاء صندوق إختيار الملف من الحاسوب
 // إخفاء صندوق خيارات الترجمة
+//إعادة ضبطها إلى الحالة الأولى (اللاخيار)
 // إعادة إظهار صندوق ملأ بيانات الفيديو
 drawerBack.addEventListener('click', function(){
   videoNameDisplay.innerText = "";
@@ -80,4 +81,18 @@ drawerBack.addEventListener('click', function(){
   document.getElementById('choosedFileName').innerText = fileInput.value;
   chooseSubtitiesContainer.style.display = "none";
   videoDetailsContainer.style.display = 'flex';
+  inActiveSubstities();
 })
+
+//
+for(var i = 0; i < chooseSubtitiesItems.length; ++i){
+  chooseSubtitiesItems[i].addEventListener('click', function(){
+    inActiveSubstities();
+    this.classList.add('video-details-subtities-active');
+  })
+}
+function inActiveSubstities(){
+  for(var j = 0; j < chooseSubtitiesItems.length; ++j){
+    chooseSubtitiesItems[j].classList.remove('video-details-subtities-active');
+  }
+}

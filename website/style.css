@@ -108,6 +108,7 @@ html, body{
   text-align: center;
   border-width: 0px;
   font-size: 9pt;
+  cursor: pointer;
 }
 .video-details-subtities-active{
   background: rgba(0, 130, 255, 0.9);
