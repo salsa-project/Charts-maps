@@ -4,6 +4,23 @@ const drawerContainer = document.getElementById('multi-drawer-container');
 const drawerClose = document.getElementsByClassName('drawer-close')[0];
 const drawerBack = document.getElementsByClassName('drawer-back')[0];
 const drawersWindow = document.getElementById('drawers');
+const videoNameInput = document.getElementsByClassName('video-details-list-input')[0];
+const validateVideoDetails = document.getElementsByClassName('validate-video-details')[0];
+const videoDetailsContainer = document.getElementsByClassName('video-details')[0];
+const uploadVideoContainer = document.getElementsByClassName('upload-video')[0];
+const drawerNextBtn = document.getElementsByClassName('drawer-next-btn')[0];
+const videoType1 = document.getElementsByClassName('video-details-list-one')[0];
+const videoType2 = document.getElementsByClassName('video-details-list-two')[0];
+const videoNameDisplay = document.getElementsByClassName('video-name-display')[0];
+const chooseSubtitiesContainer = document.getElementsByClassName('video-details-subtities-container')[0];
+const chooseSubtitiesItems = document.getElementsByClassName('video-details-subtities');
+const fileInput = document.getElementById('video-file');
+const uploadVideoWrapperContainer = document.getElementsByClassName('upload-video-wrapper-container')[0];
+const uploadVideoPercentageContainer = document.getElementById('upload-video-percentage');
+const textPercentage = document.getElementById('text-percentage');
+const progressCircle = document.querySelector('#upload-progress circle:nth-child(2)');
+const progressDot = document.querySelector('#upload-progress circle:nth-child(3)');
+
 
 // Show drawer
 uploadBtn1.addEventListener('click', function(){
@@ -23,18 +40,6 @@ drawerContainer.addEventListener('click', function(e){
   }
 })
 
-const videoNameInput = document.getElementsByClassName('video-details-list-input')[0];
-const validateVideoDetails = document.getElementsByClassName('validate-video-details')[0];
-const videoDetailsContainer = document.getElementsByClassName('video-details')[0];
-const uploadVideoContainer = document.getElementsByClassName('upload-video')[0];
-const drawerNextBtn = document.getElementsByClassName('drawer-next-btn')[0];
-const videoType1 = document.getElementsByClassName('video-details-list-one')[0];
-const videoType2 = document.getElementsByClassName('video-details-list-two')[0];
-const videoNameDisplay = document.getElementsByClassName('video-name-display')[0];
-const chooseSubtitiesContainer = document.getElementsByClassName('video-details-subtities-container')[0];
-const chooseSubtitiesItems = document.getElementsByClassName('video-details-subtities');
-const fileWraper = document.getElementsByClassName('file-wrapper')[0];
-const fileInput = document.getElementById('video-file');
 
 let videoName = "";
 let videoTypeOne = "";
@@ -50,8 +55,10 @@ validateVideoDetails.addEventListener('click', function(){
   videoTypeOne = videoType1.value;
   videoTypeTwo = videoType2.value;
   videoNameDisplay.innerText = videoName;
+  uploadVideoPercentageContainer.style.display = "none";
   videoDetailsContainer.style.display = 'none';
   uploadVideoContainer.style.display = 'flex';
+  uploadVideoWrapperContainer.style.display = 'flex';
   drawerBack.style.display = 'block';
 })
 
@@ -97,18 +104,3 @@ function inActiveSubstities(){
     chooseSubtitiesItems[j].classList.remove('video-details-subtities-active');
   }
 }
-//بدأ رفع الفيديو
-drawerNextBtn.addEventListener('click', function(){
-  
-})
-
-
-
-
-
-
-
-
-
-
-//
