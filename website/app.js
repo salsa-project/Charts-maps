@@ -16,12 +16,12 @@ uploadBtn2.addEventListener('click', function(){
 drawerClose.addEventListener('click', function(){
   drawerContainer.style.display = "none";
 })
-// Close drawer if user clicked outside the drawer
-// drawerContainer.addEventListener('click', function(e){
-//   if(!drawersWindow.contains(e.target)){
-//     drawerContainer.style.display = "none";
-//   }
-// })
+//Close drawer if user clicked outside the drawer
+drawerContainer.addEventListener('click', function(e){
+  if(!drawersWindow.contains(e.target)){
+    drawerContainer.style.display = "none";
+  }
+})
 
 const videoNameInput = document.getElementsByClassName('video-details-list-input')[0];
 const validateVideoDetails = document.getElementsByClassName('validate-video-details')[0];
@@ -84,15 +84,31 @@ drawerBack.addEventListener('click', function(){
   inActiveSubstities();
 })
 
-//
+//إختيار نوع الترجمة
 for(var i = 0; i < chooseSubtitiesItems.length; ++i){
   chooseSubtitiesItems[i].addEventListener('click', function(){
     inActiveSubstities();
     this.classList.add('video-details-subtities-active');
   })
 }
+//دالة لإعادة ضبط خيارات الترجمة
 function inActiveSubstities(){
   for(var j = 0; j < chooseSubtitiesItems.length; ++j){
     chooseSubtitiesItems[j].classList.remove('video-details-subtities-active');
   }
 }
+//بدأ رفع الفيديو
+drawerNextBtn.addEventListener('click', function(){
+  
+})
+
+
+
+
+
+
+
+
+
+
+//
