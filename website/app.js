@@ -24,6 +24,12 @@ const textPercentage = document.getElementById('text-percentage');
 const progressCircle = document.querySelector('#upload-progress circle:nth-child(2)');
 const progressDot = document.querySelector('#upload-progress circle:nth-child(3)');
 const drawerTitle = document.getElementsByClassName('drawer-title')[0];
+const videoCodeBlocks = document.getElementById('video-code-blocks');
+const progressCircleMini = document.querySelector('.l-aside-my-videos #upload-progress circle:nth-child(2)');
+const progressCircleMiniDot = document.querySelector('.l-aside-my-videos #upload-progress circle:nth-child(3)');
+const myVideosTextPercentage = document.querySelector('.l-aside-my-videos #text-percentage');
+const myVideosPercentageContainer = document.querySelector('.my-videos-percentage');
+let subtitleType = null;
 
 // Show drawer
 uploadBtn1.addEventListener('click', function(){
@@ -58,8 +64,8 @@ validateVideoDetails.addEventListener('click', function(){
   if(videoName.length < 1){//التحقق من أن المستخدم أدخل إسم الفيديو
     return alert('Enter Video Name To Continue!');
   }
-  videoTypeOne = videoType1.value;//Movie الحقل الأول
-  videoTypeTwo = videoType2.value;//Serie الحقل الثاني
+  videoTypeOne = videoType1.innerText;//Movie الحقل الأول
+  videoTypeTwo = videoType2.innerText;//Serie الحقل الثاني
   videoNameDisplay.innerText = videoName;
   uploadVideoPercentageContainer.style.display = "none";
   videoDetailsContainer.style.display = 'none';
@@ -67,6 +73,7 @@ validateVideoDetails.addEventListener('click', function(){
   uploadVideoWrapperContainer.style.display = 'flex';
   drawerBack.style.display = 'block';
   drawerTitle.textContent = "Upload Video Of";
+  nextCount = 1;
 })
 
 //إظهار إسم الملف الذي إختاره المستخدم من حاسوبه
@@ -74,12 +81,16 @@ validateVideoDetails.addEventListener('click', function(){
 function getFileData(myFile, n){
    var file = myFile.files[0];
    var filename = file.name || "";
+   inActiveSubstities();
    if(n == 1){
      document.getElementById('choosedVideoName').innerText = filename;
    }else if(n == 2){
+     chooseSubtitiesItems[0].classList.add('video-details-subtities-active');
      document.getElementById('choosedSubtitleName').innerText = filename;
+     subtitleType = "External File";
      subtitleInputBtn.value = subtitleInputBtn.defaultValue;
    }else if(n == 3){
+     chooseSubtitiesItems[0].classList.add('video-details-subtities-active');
      document.getElementById('choosedSubtitleName').innerText = filename;
      subtitleInput.value = subtitleInput.defaultValue;
    }
@@ -99,6 +110,7 @@ drawerBack.addEventListener('click', function(){
   videoTypeTwo = "";
   drawerTitle.textContent = "Upload Video";
   uploadVideoContainer.style.display = 'none';
+  videoCodeBlocks.style.display = "none";
   videoInput.value = videoInput.defaultValue;
   subtitleInput.value = subtitleInput.defaultValue;
   subtitleInputBtn.value = subtitleInputBtn.defaultValue;
@@ -109,11 +121,11 @@ drawerBack.addEventListener('click', function(){
   drawerBack.style.display = "none";
   videoDetailsContainer.style.display = 'flex';
   inActiveSubstities();
+  subtitleType = null;
   nextCount = 0;
 })
 
 //إختيار نوع الترجمة
-let subtitleType = null;
 for(var i = 0; i < chooseSubtitiesItems.length; ++i){
   chooseSubtitiesItems[i].addEventListener('click', function(){
   subtitleType = this.innerText;

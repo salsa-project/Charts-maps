@@ -40,12 +40,8 @@
         <h2 class="drawer-title">Upload Video</h2>
         <p class="video-name-display"></p>
         <div class="video-details">
-          <p class="video-details-list-one">Movie
-            <!-- <option class="video-details-list-item" value="Movie">Movie</option> -->
-          </p>
-          <p class="video-details-list-two">Serie
-            <!-- <option class="video-details-list-item" value="Serie">Serie</option> -->
-          </p>
+          <button class="video-details-list-one btn-select">Movie</button>
+          <button class="video-details-list-two btn-select">Serie</button>
           <div class="video-details-video-name">
             <input class="video-details-list-input" type="text" name="video-name" placeholder="">
             <svg class="validate-video-details" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="26" height="26">
@@ -144,6 +140,10 @@
                 <p id="choosedSubtitleName" class="choosedFileName"></p>
               </div>
             </div>
+        </div>
+        <div id="video-code-blocks">
+          <p id="embed-code">{embed code}</p>
+          <p id="video-link">{video link}</p>
         </div>
         <div class="drawer-next">
           <p>Continue</p>
@@ -259,7 +259,7 @@
           </svg>
           Home
         </a>
-        <a class="l-aside-item" href="#">
+        <a class="l-aside-item l-aside-my-videos" href="#">
           <svg class="l-aside-item-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 20" width="17" height="20">
             <defs>
               <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
@@ -282,6 +282,14 @@
             </g>
           </svg>
           My Videos
+          <div id="upload-video-percentage" class="my-videos-percentage">
+              <svg id="upload-progress">
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70"></circle>
+              </svg>
+              <p id="percentage-text"><span id="text-percentage"></span></p>
+            </div>
         </a>
         <a class="l-aside-item" href="#">
           <svg class="l-aside-item-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19" width="19" height="19">

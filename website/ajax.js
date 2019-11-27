@@ -9,11 +9,16 @@ function ajax({method: method, route: route, type: type, data: data, success: su
   xhr.upload.addEventListener("progress", function(e) {
 			var pc = parseInt(0 + (e.loaded / e.total * 100));
 			textPercentage.innerText = pc;
+      myVideosTextPercentage.innerText = pc;
+      myVideosPercentageContainer.style.display = "block";
       if(pc < 101){
         progressCircle.style.strokeDashoffset = 480 - (330*pc/100);
+        progressCircleMini.style.strokeDashoffset = 300 - (45*pc/100);
+        progressCircleMini.style.stroke =  "rgba(0, 110, 255, 0.8)";
       }
       if(pc < 101){
         progressDot.style.transform = "rotate(" + (270*(pc/100)) +"deg) translateX(5px) translateY(5px)";
+        progressCircleMiniDot.style.transform = "rotate(" + (260*(pc/100)) +"deg) translateX(5px) translateY(5px)";
       }
 		}, false);
   xhr.send(data)
@@ -22,16 +27,13 @@ function ajax({method: method, route: route, type: type, data: data, success: su
 
 // ------------------------------ //
 let nextCount = 0;
-//بدأ رفع الفيديو // التالي
+//عمليات حفظ البيانات و التحقق من المداخل قبل رفع الملفات
 drawerNextBtn.addEventListener('click', function(){
-
   if(nextCount == 0){
     videoName = videoNameInput.value;
     if(videoName.length < 3){//التحقق من أن المستخدم أدخل إسم الفيديو
       return alert('Enter Video Name To Continue!');
     }
-    videoTypeOne = videoType1.value;
-    videoTypeTwo = videoType2.value;
     uploadVideoPercentageContainer.style.display = "none";
     videoDetailsContainer.style.display = 'none';
     videoNameDisplay.innerText = videoName;
@@ -56,48 +58,84 @@ drawerNextBtn.addEventListener('click', function(){
     if(subtitleType == null || subtitleType == "External File" && document.getElementById('choosedSubtitleName').innerText.length < 3){
       return alert('Choose Subtitle Option First!');
     }
-    uploadVideoWrapperContainer.style.display = "none";
+    // uploadVideoWrapperContainer.style.display = "none";
     chooseSubtitiesContainer.style.display = "none";
     uploadSubtitleWrapperContainer.style.display = "none";
     drawerTitle.textContent = "Uploading Video Of";
     uploadVideoPercentageContainer.style.display = "block";
     nextCount++;
+    subtitleType = null;
+
+    const file = document.getElementById('video-file').files[0];//ملف الفيديو
+    videoTypeOne = videoType1.innerText;//Movie الحقل الأول
+    videoTypeTwo = videoType2.innerText;//Serie الحقل الثاني
+    //الفورم تحتوي على  ملف الفيديو و إسمه و نوعيه
+    var formData = new FormData();
+    formData.append('video', file);
+    formData.append('video-name', videoName);
+    formData.append('videoType1', videoTypeOne);
+    formData.append('videoType2', videoTypeTwo);
+    let route1 = "/upload/video";//هنا ضع رابط إستقبال الريكويست للسيرفر بالنسبة للفيديو
+    postItem(formData, route1);
   }
-
-  //ملف الفيديو
-  const file = document.getElementById('video-file').files[0];
-
-  //الفورم تحتوي على  ملف الفيديو و إسمه و نوعيه
-  var formData = new FormData();
-  formData.append('video', file);
-  formData.append('video-name', videoName);
-  formData.append('videoType1', videoTypeOne);
-  formData.append('videoType2', videoTypeTwo);
-  // postItem(formData);
-
 })
 
 //هذه الأجاكس بإمكانك التعديل عليها
-function postItem(formData){
+function postItem(formData, route){
   ajax({
-    method: 'post',//هذه لا تلمسها
-    route: '/upload/video',//هنا ضع رابط إستقبال الريكويست للسيرفر
-    type: "multipart/form-data",//هذه لا تلمسها
+    method: 'post',//post request
+    route: route,
+    type: "multipart/form-data",//type of files
     data: formData,//هذه الفورم يتم إرسالها إلى السيرفر
-    success: function(xhr){//عند مجاح رفع الملف
-      alert('Success')
+
+    success: function(xhr){//عند نجاح عملية رفع الفيديو
       console.log(xhr.responseText);
+      //عند نجاح عملية رفع الفيديو , قم بإرسال هذه الجملة
+      //من السيرفر إلى الأجاكس
+      // "video-done"
+      if(xhr.responseText == "video-done"){
+        //هنا عند نجاح عملية رفع الفيديو
+        //نقوم برفع ملف الترجمة إن وجد
+        if(document.getElementById('choosedSubtitleName').innerText.length > 3){//التحقق من وجود ملف الترجمة
+          let subtitleFile = null;//متغير سنضع فيه ملف الترجمة لاحقا
+          if(document.getElementById('subtitle-file').files[0] != undefined){
+            subtitleFile = document.getElementById('subtitle-file').files[0];//ملف الترجمة
+            formForSubtitle(subtitleFile);
+          }else if(subtitleInputBtn.files[0] != undefined){
+            subtitleFile = subtitleInputBtn.files[0];//ملف الترجمة
+            formForSubtitle(subtitleFile);
+          }
+        }else{
+          //إظهار أكواد الفيديو
+        drawerTitle.textContent = "Successfully Uploaded";
+        uploadVideoPercentageContainer.style.display = "none";
+        videoCodeBlocks.style.display = "flex";
+        }
+      }else if(xhr.responseText == "subtitle-done"){
+        //عند نجاح عملية رفع ملف الترجمة
       // هنا ضع ما تريد مثلا
       //redirect :
-       window.location.replace('/home.html')
+       //   window.location.replace('/'); //redirect to home page
+     }
     },
-    forbidden: function(){//403
+    forbidden: function(){//403 ERROR
       alert('Forbidden')
       console.log('FORBIDDEN');
     },
-    notFound: function(){//404
+    notFound: function(){//404 ERROR
       alert('Not Found')
       console.log('Not Found');
     }
   });
 };
+
+function formForSubtitle(subtitleFile){
+  var formData = new FormData();//صنع فورم لإرسال ملف الترجمة إلى السيرفر
+  let substitleName = document.getElementById('choosedSubtitleName').innerText;//إسم ملف الترجمة
+  formData.append('subtitle', subtitleFile);
+  formData.append('video-name', videoName);
+  formData.append('subtitle-name', substitleName);
+  let route2 = "/upload/subtitle";
+  postItem(formData, route2);
+  drawerTitle.textContent = "Uploading Sub. Of";
+}
