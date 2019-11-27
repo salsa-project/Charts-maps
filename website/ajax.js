@@ -21,21 +21,60 @@ function ajax({method: method, route: route, type: type, data: data, success: su
 //AJAX FUNCTION END
 
 // ------------------------------ //
-//بدأ رفع الفيديو
+let nextCount = 0;
+//بدأ رفع الفيديو // التالي
 drawerNextBtn.addEventListener('click', function(){
-  uploadVideoWrapperContainer.style.display = "none";
-  chooseSubtitiesContainer.style.display = "none";
-  uploadVideoPercentageContainer.style.display = "block";
+
+  if(nextCount == 0){
+    videoName = videoNameInput.value;
+    if(videoName.length < 3){//التحقق من أن المستخدم أدخل إسم الفيديو
+      return alert('Enter Video Name To Continue!');
+    }
+    videoTypeOne = videoType1.value;
+    videoTypeTwo = videoType2.value;
+    uploadVideoPercentageContainer.style.display = "none";
+    videoDetailsContainer.style.display = 'none';
+    videoNameDisplay.innerText = videoName;
+    uploadVideoContainer.style.display = 'flex';
+    uploadVideoWrapperContainer.style.display = 'flex';
+    drawerBack.style.display = 'block';
+    drawerTitle.textContent = "Upload Video Of";
+    nextCount++;
+  }else if(nextCount == 1){
+    //التحقق من أن المستخدم إختار فيديو من حاسوبه
+    if(document.getElementById('choosedVideoName').innerText.length < 3){
+      return alert('Choose Video File Please!');
+    }
+    uploadVideoWrapperContainer.style.display = "none";
+    drawerTitle.textContent = "Upload Subtitles Of";
+    chooseSubtitiesContainer.style.display = "flex";
+    uploadSubtitleWrapperContainer.style.display = "flex";
+
+    nextCount++;
+  }else if(nextCount == 2){
+    //التحقق من أن المستخدم إختار نوع الترجمة
+    if(subtitleType == null || subtitleType == "External File" && document.getElementById('choosedSubtitleName').innerText.length < 3){
+      return alert('Choose Subtitle Option First!');
+    }
+    uploadVideoWrapperContainer.style.display = "none";
+    chooseSubtitiesContainer.style.display = "none";
+    uploadSubtitleWrapperContainer.style.display = "none";
+    drawerTitle.textContent = "Uploading Video Of";
+    uploadVideoPercentageContainer.style.display = "block";
+    nextCount++;
+  }
+
   //ملف الفيديو
   const file = document.getElementById('video-file').files[0];
 
   //الفورم تحتوي على  ملف الفيديو و إسمه و نوعيه
   var formData = new FormData();
-  formData.append('file', file);
+  formData.append('video', file);
   formData.append('video-name', videoName);
   formData.append('videoType1', videoTypeOne);
   formData.append('videoType2', videoTypeTwo);
-  postItem(formData);
+  // postItem(formData);
+
 })
 
 //هذه الأجاكس بإمكانك التعديل عليها

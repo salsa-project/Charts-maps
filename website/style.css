@@ -14,7 +14,7 @@ html, body{
   position: absolute;
   height: 100vh;
   width: 100vw;
-  background: rgb(123, 123, 123);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 20;
 }
 #drawers{
@@ -32,6 +32,7 @@ html, body{
 }
 .drawer-close{
   margin-left: auto;
+  cursor: pointer;
 }
 .drawer-close path, .drawer-back path{
   fill: gray;
@@ -39,6 +40,7 @@ html, body{
 .drawer-back{
   display: none;
   position: absolute;
+  cursor: pointer;
 }
 .drawer-title{
   margin-top: 15px;
@@ -62,6 +64,7 @@ html, body{
   padding: 7px 0px;
   background: rgba(150, 150, 150, 0.1);
   border-radius: 25px;
+  font-size: 10pt;
   text-align: center;
   border-width: 0px;
   text-align-last:center;
@@ -93,6 +96,7 @@ html, body{
   background: white;
   border-radius: 50%;
   transform: translateX(-30px) translateY(3px);
+  cursor: pointer;
 }
 .video-details-subtities-container{
   display: none;
@@ -135,7 +139,7 @@ input[type="file"]{
   position: absolute;
   z-index: -1;
 }
-#choosedFileName{
+.choosedFileName{
   position: absolute;
   padding: 5px 0px;
   color: rgba(0, 180, 255, 1);
@@ -146,6 +150,7 @@ input[type="file"]{
   display: flex;
   margin-left: auto;
   margin-top: auto;
+  cursor: pointer;
 }
 .drawer-next>p{
   padding: 10px;
