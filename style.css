@@ -70,7 +70,7 @@
   stroke: rgba(0, 128, 255, 0) !important;
 }
 #chart2 .c3-areas-data1 path{
-  fill: rgba(0, 128, 255, 0.4) !important;
+  fill: rgba(0, 128, 255, 0.2) !important;
 }
 #chart2 .c3-xgrid-line{
   opacity: 0.2;
