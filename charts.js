@@ -187,9 +187,7 @@ var chart = c3.generate({
       show: false,
       type: 'timeseries',
       localtime: false,
-      tick: {
-        format: '%Y-%m-%d %H:%M:%S'
-      }
+      tick: { format: '%Y-%m-%d %H:%M:%S'}
       },
     y:{
       show: false
@@ -197,15 +195,15 @@ var chart = c3.generate({
   },
   grid: {
     x: {
-      //الخطوط الرمادية الأفقية .. لا تنسى إدخالها ديناميكيا عند كل 1
+      //الخطوط الرمادية الأفقية .. لا تنسى إدخالها ديناميكيا
       lines: [
-        {value: 1, text: ''},
-        {value: 2, text: ''},
-        {value: 3, text: ''},
-        {value: 4, text: ''},
-        {value: 5, text: ''},
-        {value: 6, text: ''},
-        {value: 7, text: ''}
+        {value: "2015-09-16 18:25:42", text: ''},
+        {value: '2015-09-17 18:25:42', text: ''},
+        {value: '2015-09-18 18:20:34', text: ''},
+        {value: '2015-09-19 18:25:42', text: ''},
+        {value: '2015-09-20 18:20:34', text: ''},
+        {value: '2015-09-21 18:20:34', text: ''},
+        {value: '2015-09-22 18:20:34', text: ''}
       ]
     },
     lines: {

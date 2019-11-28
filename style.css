@@ -60,9 +60,9 @@
   margin: 0px auto;
 }
 #chart2 .c3-circle{
-  stroke-width: 4px;
+  stroke-width: 6px;
   stroke: white;
-  r: 4px;
+  r: 4.5px;
   fill: rgb(0, 128, 255);
 }
 #chart2 .c3-line-data1 {
