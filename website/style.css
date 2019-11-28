@@ -222,6 +222,18 @@ input[type="file"]{
   height: 50px;
   margin-top: 10px;
 }
+.drawer-cancel-upload{
+  display: none;
+  position: absolute;
+  left: 40px;
+  bottom: 30px;
+  width: 50px;
+}
+.drawer-cancel-upload>p{
+  color: red;
+  font-size: 9pt;
+  cursor: pointer;
+}
 .drawer-next{
   display: flex;
   margin-left: auto;
@@ -231,9 +243,6 @@ input[type="file"]{
 .drawer-next>p{
   padding: 10px;
   color: rgba(0, 180, 255, 1);
-}
-.drawer-next>svg{
-  transform: scale(1);
 }
 .drawer-next>svg path{
   transform: scale(0.9);
@@ -357,7 +366,7 @@ input[type="file"]{
   position: relative;
 }
 .my-videos-percentage{
-  /* display: none; */
+  display: none;
   position: absolute;
   top: -45px;
   right: -45px;
@@ -372,10 +381,10 @@ input[type="file"]{
   r: 10px;
 }
 .l-aside-my-videos #upload-progress circle:nth-child(1){
-  stroke: rgba(0, 110, 255, 0);
+  stroke: rgb(0, 150, 252, 0);
 }
 .l-aside-my-videos #upload-progress circle:nth-child(2){
-  stroke: rgba(0, 110, 255, 0);
+  stroke: rgba(0, 150, 252, 0);
   stroke-dasharray: 300;
   stroke-dashoffset: 255;
 }
@@ -389,11 +398,12 @@ input[type="file"]{
 .l-aside-my-videos #percentage-text, .l-aside-my-videos #text-percentage{
   top: -86px;
   right: -68px;
+  color: rgb(0, 150, 252);
   font-size: 6pt;
 }
 .l-aside-my-videos #text-percentage{
   top: 0px;
-  right: 0px;
+  right: 1px;
 }
 .body-parts{
   height: 100%;
@@ -608,3 +618,4 @@ input[type="file"]{
   border: 1px rgba(20, 20, 20, 0.1) solid;
   box-shadow: 0px 0px 20px -9px lightgray;
 }
+

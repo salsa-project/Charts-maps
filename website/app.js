@@ -3,6 +3,7 @@ const uploadBtn2 = document.getElementsByClassName('upload-part-body-btn')[0];
 const drawerContainer = document.getElementById('multi-drawer-container');
 const drawerClose = document.getElementsByClassName('drawer-close')[0];
 const drawerBack = document.getElementsByClassName('drawer-back')[0];
+const drawerCancel = document.getElementsByClassName('drawer-cancel-upload')[0];
 const drawersWindow = document.getElementById('drawers');
 const videoNameInput = document.getElementsByClassName('video-details-list-input')[0];
 const validateVideoDetails = document.getElementsByClassName('validate-video-details')[0];
@@ -119,6 +120,8 @@ drawerBack.addEventListener('click', function(){
   chooseSubtitiesContainer.style.display = "none";
   uploadSubtitleWrapperContainer.style.display = "none";
   drawerBack.style.display = "none";
+  drawerCancel.style.display = "none";
+  myVideosPercentageContainer.style.display = "none";
   videoDetailsContainer.style.display = 'flex';
   inActiveSubstities();
   subtitleType = null;
@@ -142,3 +145,4 @@ function inActiveSubstities(){
     chooseSubtitiesItems[j].classList.remove('video-details-subtities-active');
   }
 }
+

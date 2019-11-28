@@ -5,20 +5,18 @@ function ajax({method: method, route: route, type: type, data: data, success: su
   xhr.onload = function(){
     (this.status == 200) ? (success(this)) : (this.status == 403)? (forbidden(this)) : (notFound(this));
   }
-  //النسبة المئوية عند رفع الفيديو
+  //النسبة المئوية عند رفع الفيديو أو ملف الترجمة
   xhr.upload.addEventListener("progress", function(e) {
-			var pc = parseInt(0 + (e.loaded / e.total * 100));
-			textPercentage.innerText = pc;
-      myVideosTextPercentage.innerText = pc;
-      myVideosPercentageContainer.style.display = "block";
+			var pc = parseInt(0 + (e.loaded / e.total * 100));//النسبة المئوية عند الرف
+			textPercentage.innerText = pc;//إظهار النسبة المئوية
+      myVideosTextPercentage.innerText = pc+"%";//إظهار النسبة المئوية
+      myVideosPercentageContainer.style.display = "block";//إظهار حاوي النسبة المؤوية
       if(pc < 101){
         progressCircle.style.strokeDashoffset = 480 - (330*pc/100);
         progressCircleMini.style.strokeDashoffset = 300 - (45*pc/100);
-        progressCircleMini.style.stroke =  "rgba(0, 110, 255, 0.8)";
-      }
-      if(pc < 101){
+        progressCircleMini.style.stroke =  "rgba(0, 150, 252, 0.8)";
         progressDot.style.transform = "rotate(" + (270*(pc/100)) +"deg) translateX(5px) translateY(5px)";
-        progressCircleMiniDot.style.transform = "rotate(" + (260*(pc/100)) +"deg) translateX(5px) translateY(5px)";
+        progressCircleMiniDot.style.transform = "rotate(" + (280*(pc/100)) +"deg) translateX(5px) translateY(5px)";
       }
 		}, false);
   xhr.send(data)
@@ -58,11 +56,11 @@ drawerNextBtn.addEventListener('click', function(){
     if(subtitleType == null || subtitleType == "External File" && document.getElementById('choosedSubtitleName').innerText.length < 3){
       return alert('Choose Subtitle Option First!');
     }
-    // uploadVideoWrapperContainer.style.display = "none";
     chooseSubtitiesContainer.style.display = "none";
     uploadSubtitleWrapperContainer.style.display = "none";
     drawerTitle.textContent = "Uploading Video Of";
     uploadVideoPercentageContainer.style.display = "block";
+    drawerCancel.style.display = "block";
     nextCount++;
     subtitleType = null;
 
@@ -110,12 +108,17 @@ function postItem(formData, route){
         drawerTitle.textContent = "Successfully Uploaded";
         uploadVideoPercentageContainer.style.display = "none";
         videoCodeBlocks.style.display = "flex";
+        drawerCancel.style.display = "none";
         }
       }else if(xhr.responseText == "subtitle-done"){
         //عند نجاح عملية رفع ملف الترجمة
       // هنا ضع ما تريد مثلا
       //redirect :
        //   window.location.replace('/'); //redirect to home page
+       drawerTitle.textContent = "Successfully Uploaded";
+       uploadVideoPercentageContainer.style.display = "none";
+       videoCodeBlocks.style.display = "flex";
+       drawerCancel.style.display = "none";
      }
     },
     forbidden: function(){//403 ERROR
@@ -139,3 +142,4 @@ function formForSubtitle(subtitleFile){
   postItem(formData, route2);
   drawerTitle.textContent = "Uploading Sub. Of";
 }
+
