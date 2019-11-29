@@ -145,4 +145,27 @@ function inActiveSubstities(){
     chooseSubtitiesItems[j].classList.remove('video-details-subtities-active');
   }
 }
-
+//START-> DRAG AND DROP FILE UPLOAD
+uploadVideoWrapperContainer.ondragover = uploadVideoWrapperContainer.ondragenter = function(e) {
+  e.preventDefault();
+};
+uploadSubtitleWrapperContainer.ondragover = uploadSubtitleWrapperContainer.ondragenter = function(e) {
+  e.preventDefault();
+};
+uploadVideoWrapperContainer.ondrop = function(e) {
+  e.preventDefault();
+  console.log(e.dataTransfer.files);
+  if(e.dataTransfer.files[0].type.indexOf('video/') == -1){//لتحقق من أن الملف عبارة عن فيديو
+    return alert('Only Video Files Accepted!')
+  }
+  videoInput.files = e.dataTransfer.files;
+  document.getElementById('choosedVideoName').innerText = e.dataTransfer.files[0].name;//إظهار إسم ملف الفيديو
+};
+uploadSubtitleWrapperContainer.ondrop = function(e) {
+  e.preventDefault();
+  subtitleInput.files = e.dataTransfer.files;
+  document.getElementById('choosedSubtitleName').innerText = e.dataTransfer.files[0].name;//إظهار إسم ملف الترجمة
+  chooseSubtitiesItems[0].classList.add('video-details-subtities-active');
+  subtitleType = "External File";
+};
+// END-> DRAG AND DROP

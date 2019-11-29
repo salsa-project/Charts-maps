@@ -110,7 +110,8 @@ function postItem(formData, route){
         videoCodeBlocks.style.display = "flex";
         drawerCancel.style.display = "none";
         }
-      }else if(xhr.responseText == "subtitle-done"){
+      }
+      if(xhr.responseText == "subtitle-done"){
         //عند نجاح عملية رفع ملف الترجمة
       // هنا ضع ما تريد مثلا
       //redirect :
@@ -142,4 +143,3 @@ function formForSubtitle(subtitleFile){
   postItem(formData, route2);
   drawerTitle.textContent = "Uploading Sub. Of";
 }
-
