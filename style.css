@@ -75,7 +75,9 @@
 #chart2 .c3-xgrid-line{
   opacity: 0.2;
 }
-
+#chart2 .c3-bar, #chart3 .c3-bar{
+  fill: rgba(150, 150, 150, 0.2) !important;
+}
 
 /********* CHART 3 ************/
 #chart3{
