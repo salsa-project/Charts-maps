@@ -191,8 +191,8 @@ var chart = c3.generate({
             const defs = document.getElementsByTagName('defs');
             var grad1 =
             '<linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">'+
-            '  <stop offset="0%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:1" />'+
-            '  <stop offset="50%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:0.5" />'+
+            '  <stop offset="0%" style="stop-color:rgba(0, 128, 255, 0.8);stop-opacity:1" />'+
+            '  <stop offset="50%" style="stop-color:rgba(0, 128, 255, 0.7);stop-opacity:0.3" />'+
             '  <stop offset="100%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:0" />'+
             '</linearGradient>';
 
@@ -273,16 +273,16 @@ var chart = c3.generate({
       data2: 'bar'
     },
         colors: {
-            data1: 'url(#grad1)'
+            data1: 'url(#grad2)'
         }
   },
   oninit: function() {//linear gradient
             const defs = document.getElementsByTagName('defs');
             var grad2 =
             '<linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">'+
-            '  <stop offset="0%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:1" />'+
-            '  <stop offset="50%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:0.5" />'+
-            '  <stop offset="100%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:0" />'+
+            '  <stop offset="0%" style="stop-color:rgba(0, 128, 255, 1);stop-opacity:1" />'+
+            '  <stop offset="50%" style="stop-color:rgba(0, 128, 255, 0.8);stop-opacity:0.4" />'+
+            '  <stop offset="100%" style="stop-color:rgba(0, 128, 255, 0.3);stop-opacity:0" />'+
             '</linearGradient>';
 
             defs[2].insertAdjacentHTML('afterbegin', grad2)
