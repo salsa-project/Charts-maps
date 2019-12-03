@@ -182,8 +182,24 @@ var chart = c3.generate({
     types: {
       data1: 'area-spline',
       data2: 'bar'
-    }
+    },
+        colors: {
+            data1: 'url(#grad1)'
+        }
   },
+  oninit: function() {//linear gradient
+            const defs = document.getElementsByTagName('defs');
+            var grad1 =
+            '<linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">'+
+            '  <stop offset="0%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:1" />'+
+            '  <stop offset="50%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:0.5" />'+
+            '  <stop offset="100%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:0" />'+
+            '</linearGradient>';
+
+              defs[1].insertAdjacentHTML('afterbegin', grad1)
+
+
+      },
   bar: {
     width: {
       ratio: 0.01
@@ -201,18 +217,6 @@ var chart = c3.generate({
     }
   },
   grid: {
-    // x: {
-    //   //الخطوط الرمادية الأفقية .. لا تنسى إدخالها ديناميكيا
-    //   lines: [
-    //     {value: "2015-09-16 18:25:42", text: ''},
-    //     {value: '2015-09-17 18:25:42', text: ''},
-    //     {value: '2015-09-18 18:20:34', text: ''},
-    //     {value: '2015-09-19 18:25:42', text: ''},
-    //     {value: '2015-09-20 18:20:34', text: ''},
-    //     {value: '2015-09-21 18:20:34', text: ''},
-    //     {value: '2015-09-22 18:20:34', text: ''}
-    //   ]
-    // },
     lines: {
       front: false
     },
@@ -267,8 +271,23 @@ var chart = c3.generate({
     types: {
       data1: 'area-spline',
       data2: 'bar'
-    }
+    },
+        colors: {
+            data1: 'url(#grad1)'
+        }
   },
+  oninit: function() {//linear gradient
+            const defs = document.getElementsByTagName('defs');
+            var grad2 =
+            '<linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">'+
+            '  <stop offset="0%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:1" />'+
+            '  <stop offset="50%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:0.5" />'+
+            '  <stop offset="100%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:0" />'+
+            '</linearGradient>';
+
+            defs[2].insertAdjacentHTML('afterbegin', grad2)
+
+      },
   bar: {
     width: {
       ratio: 0.01
@@ -288,19 +307,6 @@ var chart = c3.generate({
     }
   },
   grid: {
-    x: {
-      //الخطوط الرمادية الأفقية .. لا تنسى إدخالها ديناميكيا عند كل 1
-      lines: [
-        {value: 1, text: ''},
-        {value: 2, text: ''},
-        {value: 3, text: ''},
-        {value: 4, text: ''},
-        {value: 5, text: ''},
-        {value: 6, text: ''},
-        {value: 7, text: ''},
-        {value: 8, text: ''}
-      ]
-    },
     lines: {
       front: false
     },
@@ -334,3 +340,16 @@ var chart = c3.generate({
 }
 });
 });
+// setTimeout(function(){
+//   const defs = document.getElementsByTagName('defs');
+//   const grad = `<linearGradient id="gradient">
+//       <stop offset="5%" stop-color="#FFC338" />
+//       <stop offset="95%" stop-color="#FFEA68" />
+//     </linearGradient>` ;
+//   alert(defs.length)
+//   for(var i = 0; i < defs.length; ++i){
+//     defs[i].insertAdjacentHTML('afterbegin', grad)
+//     // defs[i].prepend(grad)
+//   }
+//
+// }, 2000)
