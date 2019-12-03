@@ -239,8 +239,8 @@ var chart = c3.generate({
                 text = "<div class='tooltip-container " + $$.CLASS.tooltip + "'>" + (title || title === 0 ? "<p class='tooltip-text tooltip-date'>" + title + "</p>" : "");
             }
             value = valueFormat(d[i].value, d[i].ratio, d[i].id, d[i].index);
-            text += "<p class='tooltip-text tooltip-value'>" + value + "</p>";
         }
+        text += "<p class='tooltip-text tooltip-value'>" + value + "</p>";
         return text + "</div>";
     }
 }
@@ -327,8 +327,8 @@ var chart = c3.generate({
                 text = "<div class='tooltip-container " + $$.CLASS.tooltip + "'>" + (title || title === 0 ? "<p class='tooltip-text tooltip-date'>" + title + "</p>" : "");
             }
             value = valueFormat(d[i].value, d[i].ratio, d[i].id, d[i].index);
-            text += "<p class='tooltip-text tooltip-value'>" + value + "</p>";
         }
+        text += "<p class='tooltip-text tooltip-value'>" + value + "</p>";
         return text + "</div>";
     }
 }
