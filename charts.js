@@ -193,7 +193,7 @@ var chart = c3.generate({
             '<linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">'+
             '  <stop offset="0%" style="stop-color:rgba(0, 128, 255, 0.8);stop-opacity:1" />'+
             '  <stop offset="50%" style="stop-color:rgba(0, 128, 255, 0.7);stop-opacity:0.3" />'+
-            '  <stop offset="100%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:0" />'+
+            '  <stop offset="95%" style="stop-color:rgba(0, 128, 255, 0.6);stop-opacity:0" />'+
             '</linearGradient>';
 
               defs[1].insertAdjacentHTML('afterbegin', grad1)
@@ -282,7 +282,7 @@ var chart = c3.generate({
             '<linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">'+
             '  <stop offset="0%" style="stop-color:rgba(0, 128, 255, 1);stop-opacity:1" />'+
             '  <stop offset="50%" style="stop-color:rgba(0, 128, 255, 0.8);stop-opacity:0.4" />'+
-            '  <stop offset="100%" style="stop-color:rgba(0, 128, 255, 0.3);stop-opacity:0" />'+
+            '  <stop offset="95%" style="stop-color:rgba(0, 128, 255, 0.3);stop-opacity:0" />'+
             '</linearGradient>';
 
             defs[2].insertAdjacentHTML('afterbegin', grad2)
